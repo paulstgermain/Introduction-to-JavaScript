@@ -167,8 +167,30 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+
+function game(userChoice, computerChoice){
+
+  if (userChoice === computerChoice) {
+    return 'it\'s a tie';
+  } else if (userChoice === 'rock') {
+    if (computerChoice === 'paper') {
+      return 'you lose!';
+    } else {
+      return 'you win!';
+    }
+  } else if (userChoice === 'paper'){
+    if (computerChoice === 'scissors') {
+      return 'you lose!';
+    }else {
+      return 'you win!';
+    }
+  } else if (userChoice === 'scissors') {
+    if (computerChoice === 'rock') {
+      return 'you lose!';
+    } else {
+      return 'you win!';
+    }
+  }
 }
   
   
@@ -184,9 +206,16 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
+function miles(kilo){
     /*add your code here*/
+    let result = 0;
+    for(let i = 0; i < kilo; i++){
+      result = result + 0.621371;
+    }
+    return result;
   }
+
+  console.log(miles(4));
 
 
 
@@ -198,8 +227,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
+function feet(cm){
     /*add your code here*/
+    return (cm / 30.48);
   }
  
 
@@ -214,9 +244,21 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(num){
+  /*add your code here*/
+  let numBottles = num;
+
+  let firstVerse;
+  let secondVerse;
+  let result;
+  for(let i = 0; i <= numBottles; i++){
+    firstVerse = numBottles + ' bottles of soda on the wall, ' + numBottles + ' bottles of soda, ';
+    numBottles = numBottles - 1;
+    secondVerse = 'take one down pass it around ' + numBottles + ' bottles of soda on the wall';
+    result = firstVerse + secondVerse;
+    return result;
+}
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -235,9 +277,9 @@ Using the grade function below do the following:
 */
   
 function grade(num){
-    if(num < 100 && num >= 90){
+    if(num >= 90){
       return 'you got an A';
-    }else if(num <90 && num >= 80){
+    }else if(num < 90 && num >= 80){
       return 'you got a B';
     }else if(num < 80 && num >= 70){
       return 'you got a C';
