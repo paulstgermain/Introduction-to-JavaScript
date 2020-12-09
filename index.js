@@ -307,8 +307,17 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(string) {
+  splitString = string.split("");
+  let result = 0;
+
+  for(let i = 0; i < splitString.length; i++){
+    if(splitString[i] === 'a' || splitString[i] === 'e' || splitString[i] === 'i' || splitString[i] === 'o' || splitString[i] === 'u'){
+      result = result + 1;
+    }
+  }
+
+  return result;
 }
 
 
